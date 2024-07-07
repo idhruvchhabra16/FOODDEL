@@ -22,5 +22,5 @@ node_modules
 *.sln
 *.sw?
 
-/backend/.env
+.env
 
