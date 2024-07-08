@@ -19,6 +19,16 @@ const LoginPopup = ({ setShowLogin }) => {
     const onChangeHandler = (event) => {
         const name = event.target.name
         const value = event.target.value
+
+           // Trim white spaces from password input
+           if (name === 'password') {
+            value = value.trim();
+            if (value.includes(' ')) {
+                toast.error("Password cannot contain spaces");
+                return;
+            }
+        }
+
         setData(data => ({ ...data, [name]: value }))
     }
 
